@@ -334,3 +334,233 @@ viewBox="0 0 113.04 113.23"
 </g>
 </svg>
 <div>Walking</div>`;
+let userSituationSvg = document.getElementById('user-situation-svg');
+userSituationSvg.innerHTML = `<defs>
+<style>
+  .user-1 {
+    fill: none;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+  }
+  .user-2 {
+    fill: #fff;
+    opacity: 0.14;
+  }
+</style>
+</defs>
+<g id="Layer_2" data-name="Layer 2">
+<g id="app">
+  <g id="Situation_NORMAL" data-name="Situation NORMAL">
+    <path
+      class="user-1"
+      d="M15,.5a14.53,14.53,0,0,0-3.73,28.58L15,32.82l3.74-3.74A14.53,14.53,0,0,0,15,.5Zm0,3.23A4.85,4.85,0,1,1,10.2,8.58,4.84,4.84,0,0,1,15,3.73Zm0,23.11a11.63,11.63,0,0,1-9.69-5.2c.05-3.22,6.46-5,9.69-5s9.65,1.76,9.7,5A11.66,11.66,0,0,1,15,26.84Z"
+    />
+    <path
+      class="user-2"
+      d="M15,.5a14.53,14.53,0,0,0-3.73,28.58L15,32.82l3.74-3.74A14.53,14.53,0,0,0,15,.5Zm0,3.23A4.85,4.85,0,1,1,10.2,8.58,4.84,4.84,0,0,1,15,3.73Zm0,23.11a11.63,11.63,0,0,1-9.69-5.2c.05-3.22,6.46-5,9.69-5s9.65,1.76,9.7,5A11.66,11.66,0,0,1,15,26.84Z"
+    />
+  </g>
+</g>
+</g>`;
+let tempraturesSvg = document.getElementsByClassName('temprature-style');
+for (let i = 0; i < tempraturesSvg.length; i++) {
+  tempraturesSvg[i].innerHTML = `<defs>
+  <style>
+    .temprature-1 {
+      fill: #a00;
+      opacity: 0.39;
+    }
+    .temprature-2 {
+      fill: red;
+    }
+    .temprature-3,
+    .temprature-4 {
+      fill: none;
+      stroke: #b3b3b3;
+      stroke-miterlimit: 10;
+    }
+    .temprature-4 {
+      stroke-linecap: round;
+    }
+  </style>
+</defs>
+<g id="Layer_2" data-name="Layer 2">
+  <g id="app">
+    <path
+      class="temprature-1"
+      d="M25.91,41.72A8.61,8.61,0,1,1,11.28,35.1a2.73,2.73,0,0,0,.83-1.94V15.44H22.52V21.8h0V33.16a2.74,2.74,0,0,0,.85,2A8.62,8.62,0,0,1,25.91,41.72Z"
+    />
+    <path class="temprature-2" d="M0,13.34l3.62,2.25L0,17.86Z" />
+    <path
+      class="temprature-3"
+      d="M25.91,41.72A8.61,8.61,0,1,1,11.28,35.1a2.73,2.73,0,0,0,.83-1.94V5.83A5.29,5.29,0,0,1,17.24.5,5.19,5.19,0,0,1,22.5,5.7V33.16a2.74,2.74,0,0,0,.85,2A8.63,8.63,0,0,1,25.91,41.72Z"
+    />
+    <line
+      class="temprature-4"
+      x1="9.17"
+      y1="33.4"
+      x2="4.78"
+      y2="33.4"
+    />
+    <line
+      class="temprature-4"
+      x1="9.17"
+      y1="19.92"
+      x2="4.78"
+      y2="19.92"
+    />
+    <line
+      class="temprature-4"
+      x1="9.17"
+      y1="5.06"
+      x2="4.78"
+      y2="5.06"
+    />
+    <line
+      class="temprature-4"
+      x1="9.17"
+      y1="12.49"
+      x2="6.73"
+      y2="12.49"
+    />
+    <line
+      class="temprature-4"
+      x1="9.17"
+      y1="26.66"
+      x2="6.73"
+      y2="26.66"
+    />
+  </g>
+</g>`;
+}
+let heartContainer = document.getElementById('heart-icon');
+heartContainer.innerHTML = `<defs>
+<style>
+  .heart-1 {
+    fill: none;
+    stroke: red;
+    stroke-miterlimit: 10;
+    stroke-width: 1.15px;
+  }
+  .heart-2 {
+    opacity: 0.17;
+  }
+  .heart-3 {
+    fill: red;
+  }
+  .heart-4 {
+    opacity: 0.86;
+  }
+</style>
+</defs>
+<g id="Layer_2" data-name="Layer 2">
+<g id="app">
+  <g id="Heart_icon" data-name="Heart icon">
+    <path
+      class="heart-1"
+      d="M30.68,20.41a7.18,7.18,0,0,1-3.42-.91c-2.52-1.69-2.72-4.44-.68-6.58s6.14-3.21,6.14-3.21V5.44l-1.45.44a36.38,36.38,0,0,0-18,12.39h0"
+    />
+    <path
+      class="heart-1"
+      d="M12.06,10.3V7.58A2.14,2.14,0,0,1,14.2,5.44h3.94V7.87"
+    />
+    <path
+      class="heart-1"
+      d="M18.14,7.87V2.4A1.82,1.82,0,0,1,20,.57h0A1.82,1.82,0,0,1,21.78,2.4V9.08"
+    />
+    <path
+      class="heart-1"
+      d="M21.78,9.08V4.83A1.82,1.82,0,0,1,23.61,3h0a1.82,1.82,0,0,1,1.82,1.82v3"
+    />
+    <path
+      class="heart-1"
+      d="M28,12.06A11.53,11.53,0,0,1,31,18.27c.7,4.22,5.7,13.91-5.34,13.91-5.9,0-16-5.35-16-13.91a9.24,9.24,0,0,1,9.61-9.63,14.22,14.22,0,0,1,4.29.64"
+    />
+    <g class="heart-2">
+      <path
+        class="heart-3"
+        d="M30.68,20.41a7.18,7.18,0,0,1-3.42-.91c-2.52-1.69-2.72-4.44-.68-6.58s6.14-3.21,6.14-3.21V5.44l-1.45.44a36.38,36.38,0,0,0-18,12.39h0"
+      />
+      <path
+        class="heart-3"
+        d="M12.06,10.3V7.58A2.14,2.14,0,0,1,14.2,5.44h3.94V7.87"
+      />
+      <path
+        class="heart-3"
+        d="M18.14,7.87V2.4A1.82,1.82,0,0,1,20,.57h0A1.82,1.82,0,0,1,21.78,2.4V9.08"
+      />
+      <path
+        class="heart-3"
+        d="M21.78,9.08V4.83A1.82,1.82,0,0,1,23.61,3h0a1.82,1.82,0,0,1,1.82,1.82v3"
+      />
+      <path
+        class="heart-3"
+        d="M28,12.06A11.53,11.53,0,0,1,31,18.27c.7,4.22,5.7,13.91-5.34,13.91-5.9,0-16-5.35-16-13.91a9.24,9.24,0,0,1,9.61-9.63,14.22,14.22,0,0,1,4.29.64"
+      />
+    </g>
+    <g class="heart-4">
+      <polygon
+        class="heart-3"
+        points="0 36.38 9.9 36.13 9.68 36.27 11.44 32.77 11.71 32.23 11.9 32.8 13.85 38.55 13.38 38.55 15.25 32.88 15.44 32.33 15.71 32.84 17.53 36.26 17.31 36.13 23.53 36.38 17.31 36.63 17.16 36.63 17.09 36.49 15.27 33.08 15.73 33.04 13.86 38.7 13.62 39.41 13.38 38.71 11.43 32.96 11.89 32.99 10.13 36.49 10.06 36.63 9.9 36.63 0 36.38"
+      />
+    </g>
+  </g>
+</g>
+</g>`;
+let gasContainers = document.getElementsByClassName('gas-style');
+for (let i = 0; i < gasContainers.length; i++) {
+  gasContainers[i].innerHTML = `<defs>
+  <style>
+    .gas-1 {
+      fill: none;
+      stroke: #ff0;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+    }
+    .gas-2,
+    .gas-3 {
+      fill: #ff0;
+    }
+    .gas-2 {
+      opacity: 0.1;
+    }
+    .gas-3 {
+      opacity: 0.18;
+    }
+  </style>
+</defs>
+<g id="Layer_2" data-name="Layer 2">
+  <g id="app">
+    <line class="gas-1" x1="17.65" y1="0.5" x2="21.89" y2="0.5" />
+    <path
+      class="gas-2"
+      d="M34.65,22.61c0,3.64-2.37,6.6-5.28,6.6H5.28c-2.92,0-5.28-3-5.28-6.6S2.36,16,5.28,16a4.59,4.59,0,0,1,3.17,1.31A4.55,4.55,0,0,1,11.61,16a3.94,3.94,0,0,1,.6,0c.58-5,4.05-8.9,8.23-8.9s7.67,3.88,8.24,8.92a3.16,3.16,0,0,1,.69-.06C32.28,16,34.65,19,34.65,22.61Z"
+    />
+    <path
+      class="gas-3"
+      d="M19.77,6.8h0a5.3,5.3,0,0,1,5.3,5.3V27.84a1.81,1.81,0,0,1-1.81,1.81h-7a1.81,1.81,0,0,1-1.81-1.81V12.1a5.3,5.3,0,0,1,5.3-5.3Z"
+    />
+    <line
+      class="gas-1"
+      x1="19.77"
+      y1="3.41"
+      x2="22.14"
+      y2="3.41"
+    />
+    <line
+      class="gas-1"
+      x1="17.39"
+      y1="5.31"
+      x2="19.77"
+      y2="5.31"
+    />
+    <line
+      class="gas-1"
+      x1="19.77"
+      y1="0.89"
+      x2="19.77"
+      y2="6.8"
+    />
+  </g>
+</g>`;
+}

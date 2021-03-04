@@ -6,13 +6,17 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="icons.css" />
     <link rel="stylesheet" href="beauty.css" />
-    
   </head>
   <body>
     <div class="container">
       <!-- temprature part -->
       <div class="temprature-humidity">
         <div class="in-temp-hum">
+          <svg
+            class="temprature-style"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 26.42 50.36"
+          ></svg>
           <h5>Inside</h5>
           <h6>Temp and Humidity</h6>
           <div>
@@ -21,6 +25,11 @@
           </div>
         </div>
         <div class="out-temp-hum">
+          <svg
+            class="temprature-style"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 26.42 50.36"
+          ></svg>
           <h5>Outside</h5>
           <h6>Temp and humidity</h6>
           <span>42<span>&#176;</span>F</span>
@@ -30,35 +39,12 @@
       <!-- situation part -->
       <div class="situation situation-initial normal-situation">
         <div>
-          <svg class="user-style" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.09 33.52">
-            <defs>
-              <style>
-                .user-1 {
-                  fill: none;
-                  stroke: #fff;
-                  stroke-miterlimit: 10;
-                }
-                .user-2 {
-                  fill: #fff;
-                  opacity: 0.14;
-                }
-              </style>
-            </defs>
-            <g id="Layer_2" data-name="Layer 2">
-              <g id="app">
-                <g id="Situation_NORMAL" data-name="Situation NORMAL">
-                  <path
-                    class="user-1"
-                    d="M15,.5a14.53,14.53,0,0,0-3.73,28.58L15,32.82l3.74-3.74A14.53,14.53,0,0,0,15,.5Zm0,3.23A4.85,4.85,0,1,1,10.2,8.58,4.84,4.84,0,0,1,15,3.73Zm0,23.11a11.63,11.63,0,0,1-9.69-5.2c.05-3.22,6.46-5,9.69-5s9.65,1.76,9.7,5A11.66,11.66,0,0,1,15,26.84Z"
-                  />
-                  <path
-                    class="user-2"
-                    d="M15,.5a14.53,14.53,0,0,0-3.73,28.58L15,32.82l3.74-3.74A14.53,14.53,0,0,0,15,.5Zm0,3.23A4.85,4.85,0,1,1,10.2,8.58,4.84,4.84,0,0,1,15,3.73Zm0,23.11a11.63,11.63,0,0,1-9.69-5.2c.05-3.22,6.46-5,9.69-5s9.65,1.76,9.7,5A11.66,11.66,0,0,1,15,26.84Z"
-                  />
-                </g>
-              </g>
-            </g>
-          </svg>
+          <svg
+            class="user-style"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 30.09 33.52"
+            id="user-situation-svg"
+          ></svg>
           <span>Situation</span>
         </div>
         <!-- situation -->
@@ -75,25 +61,54 @@
       <div class="chart-container">
         <!-- heart rate -->
         <div class="chart1 chart-divs">
-          <h4><span>PPG</span><span>075</span></h4>
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 33.3 39.41"
+              class="heart-style"
+              id="heart-icon"
+            ></svg>
+            <span>PPG</span><span>075</span>
+          </h4>
           <canvas id="ppg-chart"></canvas>
           <script src="./scripts/chart1.js" type="module"></script>
         </div>
         <!-- CO -->
         <div class="chart2 chart-divs">
-          <h4><span>CO</span><span>52%</span></h4>
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 34.65 29.64"
+              class="gas-style"
+            ></svg
+            ><span>CO</span><span>52%</span>
+          </h4>
           <canvas id="co-chart"></canvas>
           <script src="./scripts/chart2.js" type="module"></script>
         </div>
         <!-- H2S -->
         <div class="chart3 chart-divs">
-          <h4><span>H<sub>2</sub>S</span><span>61%</span></h4>
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 34.65 29.64"
+              class="gas-style"
+            ></svg
+            ><span>H<sub>2</sub>S</span><span>61%</span>
+          </h4>
           <canvas id="h2s-chart"></canvas>
           <script src="./scripts/chart3.js" type="module"></script>
         </div>
         <!-- Combust -->
         <div class="chart4 chart-divs">
-          <h4><span>COMBUST</span><span>98%</span></h4>
+          <h4>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 34.65 29.64"
+              class="gas-style"
+            ></svg
+            ><span>COMBUST</span><span>98%</span>
+          </h4>
           <canvas id="combust-chart"></canvas>
           <script src="./scripts/chart4.js" type="module"></script>
         </div>
