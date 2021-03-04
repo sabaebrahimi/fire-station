@@ -1,0 +1,22 @@
+body{
+    color: white;
+    font-family: 'IRANSans';
+}
+.situation-initial {
+    color: white;
+    border: none;
+    border-radius: 15px;
+}
+.normal-situation {
+    background-image: linear-gradient(to bottom, transparent, rgba(42, 130, 64, 0.4));
+}
+.normal-situation .status {
+    color: #2A8240;
+}
+.status {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}

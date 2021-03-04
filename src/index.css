@@ -1,8 +1,56 @@
+@font-face {
+  font-family: 'IRANSans';
+  src: url('IRANSans.woff2') format('woff2'),
+      url('IRANSans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('IRANSans-Bold.woff2') format('woff2'),
+      url('IRANSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('IRANSans-Light.woff2') format('woff2'),
+      url('IRANSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('IRANSans-UltraLight.woff2') format('woff2'),
+      url('IRANSans-UltraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('IRANSans-Medium.woff2') format('woff2'),
+      url('IRANSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-image: url('../assets/background/Asset3.png');
+}
 .container {
   display: grid;
   height: inherit;
   width: inherit;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: auto auto;
   row-gap: 70px;
 }
