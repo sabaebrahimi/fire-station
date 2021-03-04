@@ -44,7 +44,7 @@
   grid-row: 2;
   grid-column: 1/5;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 25% 25% 25% 25%;
 }
 .chart1 {
   grid-column: 1;
@@ -65,4 +65,13 @@
 .out-temp-hum {
   grid-column: 2;
   grid-row: 2;
+}
+canvas {
+  background-color: transparent;
+  border: 2px red solid;
+  width: 90% !important;
+  text-align: center;
+}
+.chart-divs {
+  height: auto;
 }
