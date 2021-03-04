@@ -9,6 +9,9 @@
 .temprature-humidity {
   grid-column: 1 / 3;
   grid-row: 1;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
 }
 .situatuin {
   grid-row: 1;
@@ -23,15 +26,19 @@
 }
 .icon1 {
   grid-area: 1 1;
+  text-align: center;
 }
 .icon2 {
   grid-area: 1 2;
+  text-align: center;
 }
 .icon3 {
   grid-area: 2 1;
+  text-align: center;
 }
 .icon4 {
   grid-area: 2 2;
+  text-align: center;
 }
 .chart-container {
   grid-row: 2;
@@ -50,4 +57,12 @@
 }
 .chart4 {
   grid-column: 4;
+}
+.in-temp-hum {
+  grid-column: 2;
+  grid-row: 1;
+}
+.out-temp-hum {
+  grid-column: 2;
+  grid-row: 2;
 }
