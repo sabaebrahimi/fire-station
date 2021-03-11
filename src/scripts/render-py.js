@@ -2,13 +2,24 @@ import {chart1} from './chart1.js';
 import {chart2} from './chart2.js';
 import {chart3} from './chart3.js';
 import {chart4} from './chart4.js';
+import {setBattery, setBluetooth, setFreeFall, setWalking} from './svgLoader.js';
+
+setBattery(4);
+setBluetooth(1);
+setFreeFall(0);
+setWalking(0);
 
 let { PythonShell } = require('python-shell');
 var variables;
 let pyshell = new PythonShell('./src/python/bluetooth-config.py');
 pyshell.on('message', (message) => {
+    if (message == 'disconnected') {
+        setBluetooth(0);
+    } else {
     variables = JSON.parse(message);
     variablesToDoc();
+    console.log(variables);
+    }
 });
 
 const variablesToDoc = () => {
@@ -24,6 +35,10 @@ const variablesToDoc = () => {
     updateDataChart (chart2, variables.CO);
     updateDataChart (chart3, variables.H2S);
     updateDataChart (chart4, variables.combust);
+    setBattery(variables.battery);
+    setWalking(variables.walking);
+    setFreeFall(variables.freefall);
+    setBluetooth(1);
 }
 
 const updateDataChart = (chart, data) => {
