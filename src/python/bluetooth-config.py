@@ -9,6 +9,7 @@ while line != 'end':
     x = ser.readline()
     if len(x) != 0:
         line = str(x)
+        line = line[2:len(line) - 1]
         ls = line.split(",")
         for i in ls:
             if i.startswith('IT'):

@@ -20,8 +20,8 @@
           <h5>Inside</h5>
           <h6>Temp and Humidity</h6>
           <div>
-            <span>42<span>&#176;</span>F</span>
-            <span>10<span>&#176;</span>C</span>
+            <span><span id="inner-temp">42<span>&#176;</span>F</span></span>
+            <span><span id="inner-hum">10<span>&#176;</span>C</span></span>
           </div>
         </div>
         <div class="out-temp-hum">
@@ -32,8 +32,8 @@
           ></svg>
           <h5>Outside</h5>
           <h6>Temp and humidity</h6>
-          <span>42<span>&#176;</span>F</span>
-          <span>10<span>&#176;</span>C</span>
+          <span><span id="outer-temp">42<span>&#176;</span>F</span></span>
+          <span><span id="outer-hum">10<span>&#176;</span>C</span></span>
         </div>
       </div>
       <!-- situation part -->
@@ -68,7 +68,7 @@
               class="heart-style"
               id="heart-icon"
             ></svg>
-            <span>PPG</span><span>075</span>
+            <span>PPG</span><span id="ppg-number">075</span>
           </h4>
           <canvas id="ppg-chart"></canvas>
           <script src="./scripts/chart1.js" type="module"></script>
@@ -81,7 +81,7 @@
               viewBox="0 0 34.65 29.64"
               class="gas-style"
             ></svg
-            ><span>CO</span><span>52%</span>
+            ><span>CO</span><span id="co-number">52</span><span>%</span>
           </h4>
           <canvas id="co-chart"></canvas>
           <script src="./scripts/chart2.js" type="module"></script>
@@ -94,7 +94,8 @@
               viewBox="0 0 34.65 29.64"
               class="gas-style"
             ></svg
-            ><span>H<sub>2</sub>S</span><span>61%</span>
+            ><span>H<sub>2</sub>S</span><span id="h2s-number">61</span><span>%</span>
+
           </h4>
           <canvas id="h2s-chart"></canvas>
           <script src="./scripts/chart3.js" type="module"></script>
@@ -107,7 +108,7 @@
               viewBox="0 0 34.65 29.64"
               class="gas-style"
             ></svg
-            ><span>COMBUST</span><span>98%</span>
+            ><span>COMBUST</span><span id="combust-number">98</span><span>%</span>
           </h4>
           <canvas id="combust-chart"></canvas>
           <script src="./scripts/chart4.js" type="module"></script>
