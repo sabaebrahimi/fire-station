@@ -46,3 +46,21 @@ let myChart = new Chart(ctx, {
         }
     }
 });
+
+const updateDataChart = (chart, label, data) => {
+    chart.data.labels.shift();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.shift();
+    });
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+    });
+    chart.update(0);
+}
+
+const update1 = () => {
+    updateDataChart(myChart, 5, 7);
+}
+
+let v = setTimeout(update1, 3000);
