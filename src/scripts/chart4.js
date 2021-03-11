@@ -1,16 +1,16 @@
 const Chart = require('chart.js');
 let ctx = document.getElementById('combust-chart');
-let myChart = new Chart(ctx, {
+export var chart4 = new Chart(ctx, {
     type: 'line',
     data: {
         datasets: [{
-            data: [7, 13, 2, 10],
+            data: [],
             backgroundColor: 'rgba(255, 197, 0, 0.4)',
             borderColor: 'rgb(255, 197, 0)',
         },
         { fill: 'origin' },
         ],
-        labels: ['1', '2', '3', '4']
+        labels: ['1', '2', '3', '4', '5']
     },
     options: {
         legend: {

@@ -1,16 +1,16 @@
 const Chart = require('chart.js');
 let ctx = document.getElementById('co-chart');
-let myChart = new Chart(ctx, {
+export var chart2 = new Chart(ctx, {
     type: 'line',
     data: {
         datasets: [{
-            data: [7, 13, 2, 10],
+            data: [],
             backgroundColor: 'rgba(255, 197, 0, 0.4)',
             borderColor: 'rgb(255, 197, 0)',
         },
         { fill: 'origin' },
         ],
-        labels: ['1', '2', '3', '4']
+        labels: ['1', '2', '3', '4', '5']
     },
     options: {
         legend: {

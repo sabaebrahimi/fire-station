@@ -1,16 +1,16 @@
 const Chart = require('chart.js');
 let ctx = document.getElementById('ppg-chart');
-let myChart = new Chart(ctx, {
+export var chart1 = new Chart(ctx, {
     type: 'line',
     data: {
         datasets: [{
-            data: [7, 13, 2, 10],
+            data: [],
             backgroundColor: 'rgba(255, 0, 0, 0.4)',
             borderColor: 'rgb(255, 0, 0)',
         },
         { fill: 'origin' },
         ],
-        labels: ['1', '2', '3', '4']
+        labels: ['1', '2', '3', '4', '5']
     },
     options: {
         legend: {
@@ -46,21 +46,3 @@ let myChart = new Chart(ctx, {
         }
     }
 });
-
-const updateDataChart = (chart, label, data) => {
-    chart.data.labels.shift();
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.shift();
-    });
-    chart.data.labels.push(label);
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(data);
-    });
-    chart.update(0);
-}
-
-const update1 = () => {
-    updateDataChart(myChart, 5, 7);
-}
-
-let v = setTimeout(update1, 3000);
