@@ -15,7 +15,6 @@ const { ipcRenderer } = electron;
 let port;
 ipcRenderer.on("port:add", (e, porti) => {
     port = porti;
-    // console.log('js ' + port);
     pyshell.send(port);
 });
 
@@ -25,7 +24,6 @@ pyshell.on('message', (message) => {
         variables.bluetooth = 0;
         setSituation();
     } else {
-
         variables = JSON.parse(message);
         variables = { ...variables, bluetooth: 1 };
         variablesToDoc();
@@ -33,6 +31,7 @@ pyshell.on('message', (message) => {
         setSituation();
     }
 });
+
 
 const variablesToDoc = () => {
     document.getElementById('inner-temp').innerText = variables.innerTemp;
@@ -81,14 +80,17 @@ const setSituation = () => {
             isAnyOneRed = false;
         }
         else {
+            let p = parseInt(variables.PPG);
+            if (p <= 170 && p >= 60 && variables.freefall == 0) {
+                isAnyOneRed = false;
+            }
             if (variables.battery == 2 || variables.battery == 1) {
-                if (!isAnyOneRed)
+                if (isAnyOneRed === false)
                     color = "orange";
                 status += ("Low battery \n");
-                
             }
             if (variables.walking == 0) {
-                if (!isAnyOneRed)
+                if (isAnyOneRed === false)
                     color = "orange";
                 status += ("Motionless \n");
             }
@@ -98,51 +100,53 @@ const setSituation = () => {
                 status += ("Free Fall \n");
             }
             if (variables.combust >= 10) {
-                if (!isAnyOneRed)
+                if (isAnyOneRed === false)
                     color = "orange";
                 status += ("Combust Concentration \n");
             }
             if (variables.CO >= 70) {
-                if (!isAnyOneRed)
+                if (isAnyOneRed === false)
                     color = "orange";
                 status += ("CO Concentration \n");
             }
             if (variables.H2S >= 10) {
-                if (!isAnyOneRed)
+                if (isAnyOneRed === false)
                     color = "orange";
                 status += ("H2S Concentration \n");
             }
-            if (variables.PPG > 170 || variables.PPG < 60) {
+            if (p > 170 || p < 60) {
                 color = "red";
                 isAnyOneRed = true;
                 status += ("Abnormal HeartRate \n");
             }
             if (variables.innerTemp >= 42) {
-                if (!isAnyOneRed)
+                if (isAnyOneRed === false)
                     color = "orange";
                 status += ("Inside Temp \n");
             }
             if (variables.outerTemp >= 70) {
-                if (!isAnyOneRed)
+                if (isAnyOneRed === false)
                     color = "orange";
                 status += ("Outside Temp \n");
             }
-            if (variables.PPG <= 170 && variables.PPG >= 60 && variables.freefall == 0) {
-                isAnyOneRed = false;
-            }
         }
     }
-
+    console.log(color);
     if (color == "green") {
-        situation.className += ' normal-situation';
+        situation.className = ' normal-situation';
     } else if (color == "orange") {
-        situation.className += ' orange-situation';
+        situation.className = 'situation situation-initial orange-situation';
     } else if (color == "red") {
-        situation.className += ' red-situation';
+        situation.className = 'situation situation-initial red-situation';
     }
-    console.log(status);
     let text = document.getElementById("situation-text");
     text.innerText = status;
+    if (color === "green" || (status === "No Connection")) {
+        text.className = 'status';
+    }
+    else {
+        text.className = "status status-small";
+    }
 };
 
 const isNormal = () => {

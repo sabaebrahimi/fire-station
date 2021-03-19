@@ -25,6 +25,7 @@ body{
 }
 .red-situation .status {
     color: red;
+    color: rgb(255, 240, 240);
 }
 .status {
     height: 80%;
@@ -33,6 +34,9 @@ body{
     justify-content: center;
     text-align: center;
     font-size: 30px;
+}
+.status-small {
+    font-size: 15px;
 }
 h5, h6 {
     margin: 0 0 0 5px;
