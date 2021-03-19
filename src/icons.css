@@ -5,11 +5,13 @@
     height: 25px;
 }
 .temprature-style {
-    height: 35px;
+    height: 40px;
 }
 .heart-style {
     height: 35px;
+    align-self: center;
 }
 .gas-style {
     height: 35px;
+    align-self: flex-start;
 }

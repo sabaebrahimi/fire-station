@@ -6,7 +6,6 @@ export var chart2 = new Chart(ctx, {
         datasets: [{
             data: [],
             backgroundColor: 'rgba(255, 197, 0, 0.4)',
-            borderColor: 'rgb(255, 197, 0)',
         },
         { fill: 'origin' },
         ],

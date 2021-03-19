@@ -6,6 +6,7 @@ body{
     color: white;
     border: none;
     border-radius: 15px;
+    width: calc(100% - 45px);
 }
 .normal-situation {
     background-image: linear-gradient(to bottom, transparent, rgba(42, 130, 64, 0.4));
@@ -19,4 +20,70 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 30px;
+}
+h5, h6 {
+    margin: 0 0 0 5px;
+}
+.temp-title {
+    display: flex;
+    align-items: flex-start;
+}
+.hum-temp-number {
+    font-size: 30px;
+}
+.cel-far-style {
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}
+.degree-style {
+    color: red;
+    font-size: 30px;
+}
+.hum-temp-container {
+    padding: 10px 15px 3px 15px;
+    border: 1px solid white;
+    border-top: none;
+    width: fit-content;
+    border-radius: 5px;
+    margin-left: 13px;
+}
+.title-h5-font-size {
+    font-size: 15px;
+}
+.title-h6-font-size {
+    font-size: 12px;
+    
+}
+.chart-title-text {
+    font-size: 20px;
+    font-weight: lighter;
+    align-self: center;
+    margin-left: 7px;
+}
+.chart-title-number {
+    font-size: 30px;
+    margin-left: 5px;
+    color: #FFFF00;
+    font-weight: 500;
+    align-self: flex-end;
+}
+.chart-titles-flex {
+    display: flex;
+    align-items: center;
+}
+fieldset {
+    border: 1.5px solid #F7931E;
+    box-sizing: border-box;
+    width: fit-content;
+    border-radius: 7px;
+}
+legend {
+    padding: 0 25px 0 0;
+}
+
+@media screen and (max-width: 850px) {
+    .fire-fighter-image {
+        display: none;
+    }
 }

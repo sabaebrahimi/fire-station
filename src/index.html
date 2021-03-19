@@ -12,31 +12,66 @@
       <!-- temprature part -->
       <div class="temprature-humidity">
         <div class="in-temp-hum">
-          <svg
-            class="temprature-style"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 26.42 50.36"
-          ></svg>
-          <h5>Inside</h5>
-          <h6>Temp and Humidity</h6>
-          <div>
-            <span><span id="inner-temp">42<span>&#176;</span>F</span></span>
-            <span><span id="inner-hum">10<span>&#176;</span>C</span></span>
+          <div class="temp-title">
+            <svg
+              class="temprature-style"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 26.42 50.36"
+            ></svg>
+            <div>
+              <h5 class="title-h5-font-size">Inside</h5>
+              <h6 class="title-h6-font-size">Temp and Humidity</h6>
+            </div>
+          </div>
+
+          <div class="hum-temp-container">
+            <span
+              ><span id="inner-temp"
+                ><span class="hum-temp-number">42</span
+                ><span class="degree-style">&#176;</span
+                ><span class="cel-far-style">F</span></span
+              ></span
+            >
+            <span
+              ><span id="inner-hum"
+                ><span class="hum-temp-number">10</span
+                ><span class="degree-style">&#176;</span
+                ><span class="cel-far-style">C</span></span
+              ></span
+            >
           </div>
         </div>
-        
+
         <div class="out-temp-hum">
-          <svg
-            class="temprature-style"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 26.42 50.36"
-          ></svg>
-          <h5>Outside</h5>
-          <h6>Temp and humidity</h6>
-          <span><span id="outer-temp">42<span>&#176;</span>F</span></span>
-          <span><span id="outer-hum">10<span>&#176;</span>C</span></span>
+          <div class="temp-title">
+            <svg
+              class="temprature-style"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 26.42 50.36"
+            ></svg>
+            <div>
+              <h5 class="title-h5-font-size">Outside</h5>
+              <h6 class="title-h6-font-size">Temp and humidity</h6>
+            </div>
+          </div>
+          <div class="hum-temp-container">
+            <span
+              ><span id="outer-temp"
+                ><span class="hum-temp-number">42</span
+                ><span class="degree-style">&#176;</span
+                ><span class="cel-far-style">F</span></span
+              ></span
+            >
+            <span
+              ><span id="outer-hum"
+                ><span class="hum-temp-number">10</span
+                ><span class="degree-style">&#176;</span
+                ><span class="cel-far-style">C</span></span
+              ></span
+            >
+          </div>
         </div>
-        <img src="../assets/images/4.png" style="height: 300px;"/>
+        <img src="../assets/images/4.png" style="height: 300px" class="fire-fighter-image"/>
       </div>
       <!-- situation part -->
       <div class="situation situation-initial normal-situation">
@@ -63,62 +98,91 @@
       <div class="chart-container">
         <!-- heart rate -->
         <div class="chart1 chart-divs">
-          <h4>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 33.3 39.41"
-              class="heart-style"
-              id="heart-icon"
-            ></svg>
-            <span>PPG</span><span id="ppg-number">075</span>
-          </h4>
-          <canvas id="ppg-chart"></canvas>
-          <script src="./scripts/chart1.js" type="module"></script>
+          <fieldset style="border-color: red;">
+            <legend>
+              <h4 class="chart-titles-flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 33.3 39.41"
+                  class="heart-style"
+                  id="heart-icon"
+                ></svg>
+                <span class="chart-title-text">PPG</span
+                ><span
+                  id="ppg-number"
+                  class="chart-title-number"
+                  style="color: red !important"
+                  >075</span
+                >
+              </h4>
+            </legend>
+            <canvas id="ppg-chart"></canvas>
+            <script src="./scripts/chart1.js" type="module"></script>
+          </fieldset>
         </div>
         <!-- CO -->
         <div class="chart2 chart-divs">
-          <h4>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 34.65 29.64"
-              class="gas-style"
-            ></svg
-            ><span>CO</span><span id="co-number">52</span><span>%</span>
-          </h4>
-          <canvas id="co-chart"></canvas>
-          <script src="./scripts/chart2.js" type="module"></script>
+          <fieldset>
+            <legend>
+              <h4 class="chart-titles-flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 34.65 29.64"
+                  class="gas-style"
+                ></svg
+                ><span class="chart-title-text">CO</span
+                ><span class="chart-title-number"
+                  ><span id="co-number">52</span><span>%</span></span
+                >
+              </h4>
+            </legend>
+            <canvas id="co-chart"></canvas>
+            <script src="./scripts/chart2.js" type="module"></script>
+          </fieldset>
         </div>
         <!-- H2S -->
         <div class="chart3 chart-divs">
-          <h4>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 34.65 29.64"
-              class="gas-style"
-            ></svg
-            ><span>H<sub>2</sub>S</span><span id="h2s-number">61</span><span>%</span>
-
-          </h4>
-          <canvas id="h2s-chart"></canvas>
-          <script src="./scripts/chart3.js" type="module"></script>
+          <fieldset>
+            <legend>
+              <h4 class="chart-titles-flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 34.65 29.64"
+                  class="gas-style"
+                ></svg>
+                <span class="chart-title-text">H<sub>2</sub>S</span
+                ><span class="chart-title-number"
+                  ><span id="h2s-number">61</span><span>%</span></span
+                >
+              </h4>
+            </legend>
+            <canvas id="h2s-chart"></canvas>
+            <script src="./scripts/chart3.js" type="module"></script>
+          </fieldset>
         </div>
         <!-- Combust -->
         <div class="chart4 chart-divs">
-          <h4>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 34.65 29.64"
-              class="gas-style"
-            ></svg
-            ><span>COMBUST</span><span id="combust-number">98</span><span>%</span>
-          </h4>
-          <canvas id="combust-chart"></canvas>
-          <script src="./scripts/chart4.js" type="module"></script>
+          <fieldset>
+            <legend>
+              <h4 class="chart-titles-flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 34.65 29.64"
+                  class="gas-style"
+                ></svg
+                ><span class="chart-title-text">COMBUST</span
+                ><span class="chart-title-number"
+                  ><span id="combust-number">98</span><span>%</span></span
+                >
+              </h4>
+            </legend>
+            <canvas id="combust-chart"></canvas>
+            <script src="./scripts/chart4.js" type="module"></script>
+          </fieldset>
         </div>
       </div>
     </div>
     <script src="./scripts/render-py.js" type="module"></script>
     <script src="./scripts/svgLoader.js" type="module"></script>
-    
   </body>
 </html>
