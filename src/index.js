@@ -1,7 +1,7 @@
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const path = require('path');
 
-// process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = 'production';
 
 if (require('electron-squirrel-startup')) {
   app.quit();

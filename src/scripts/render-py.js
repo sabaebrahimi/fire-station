@@ -8,7 +8,11 @@ var variables = {
 };
 
 let { PythonShell } = require('python-shell');
-let pyshell = new PythonShell('./src/python/bluetooth-config.py');
+let options = {
+    mode: 'text',
+    pythonPath: 'python'
+}
+let pyshell = new PythonShell('./resources/app/src/python/bluetooth-config.py', options);
 
 const electron = require('electron');
 const { ipcRenderer } = electron;
@@ -53,7 +57,7 @@ const variablesToDoc = () => {
 }
 
 const updateDataChart = (chart, data) => {
-    if (chart.data.datasets[0].data.length == 5) {
+    if (chart.data.datasets[0].data.length == 10) {
         chart.data.datasets.forEach((dataset) => {
             dataset.data.shift();
         });

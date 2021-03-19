@@ -5,11 +5,11 @@ export var chart2 = new Chart(ctx, {
     data: {
         datasets: [{
             data: [],
-            backgroundColor: 'rgba(255, 197, 0, 0.4)',
+            backgroundColor: 'rgba(255, 197, 0, 0.4)'
         },
         { fill: 'origin' },
         ],
-        labels: ['1', '2', '3', '4', '5']
+        labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
     },
     options: {
         legend: {

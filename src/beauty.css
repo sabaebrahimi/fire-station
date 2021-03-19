@@ -52,6 +52,7 @@ h5, h6 {
     color: red;
     font-size: 15px;
     font-weight: bold;
+    margin-left: 3px;
 }
 .degree-style {
     color: red;
@@ -61,7 +62,7 @@ h5, h6 {
     padding: 10px 15px 3px 15px;
     border: 1px solid white;
     border-top: none;
-    width: fit-content;
+    width: max-content;
     border-radius: 5px;
     margin-left: 13px;
 }
@@ -97,6 +98,10 @@ fieldset {
 }
 legend {
     padding: 0 25px 0 0;
+}
+.ppm {
+    font-size: 18px;
+    margin-left: 5px;
 }
 
 @media screen and (max-width: 850px) {
