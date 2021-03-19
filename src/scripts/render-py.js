@@ -13,22 +13,24 @@ let pyshell = new PythonShell('./src/python/bluetooth-config.py');
 const electron = require('electron');
 const { ipcRenderer } = electron;
 let port;
-// pyshell.send(port);
 ipcRenderer.on("port:add", (e, porti) => {
     port = porti;
-    console.log('js ' + port);
+    // console.log('js ' + port);
     pyshell.send(port);
 });
 
 pyshell.on('message', (message) => {
     if (message == 'disconnected') {
         setBluetooth(0);
+        variables.bluetooth = 0;
+        setSituation();
     } else {
-        console.log(message);
-        variables.bluetooth = 1;
+
         variables = JSON.parse(message);
+        variables = { ...variables, bluetooth: 1 };
         variablesToDoc();
-        // console.log(variables);
+        console.log(variables);
+        setSituation();
     }
 });
 
@@ -63,7 +65,8 @@ const updateDataChart = (chart, data) => {
     chart.update(0);
 }
 
-const setSituation = (situation) => {
+const setSituation = () => {
+    let situation = document.getElementById("situation");
     let status = "";
     let color = "";
     let isAnyOneRed = false;
@@ -71,6 +74,7 @@ const setSituation = (situation) => {
         status = "No Connection";
         color = "orange";
     } else {
+        status = "";
         if (isNormal()) {
             status = "normal";
             color = "green";
@@ -80,54 +84,50 @@ const setSituation = (situation) => {
             if (variables.battery == 2 || variables.battery == 1) {
                 if (!isAnyOneRed)
                     color = "orange";
-                status.concat("low battery \n");
-            }
-            if (variables.bluetooth == 0) {
-                if (!isAnyOneRed)
-                    color = "orange";
-                status.concat("No Connection \n");
+                status += ("Low battery \n");
+                
             }
             if (variables.walking == 0) {
                 if (!isAnyOneRed)
                     color = "orange";
-                status.concat("Motionless \n");
+                status += ("Motionless \n");
             }
             if (variables.freefall == 1) {
                 color = "red";
                 isAnyOneRed = true;
-                status.concat("Free Fall \n");
+                status += ("Free Fall \n");
             }
             if (variables.combust >= 10) {
                 if (!isAnyOneRed)
                     color = "orange";
-                status.concat("Combust Concentration \n");
+                status += ("Combust Concentration \n");
             }
             if (variables.CO >= 70) {
                 if (!isAnyOneRed)
                     color = "orange";
-                status.concat("CO Concentration \n");
+                status += ("CO Concentration \n");
             }
             if (variables.H2S >= 10) {
                 if (!isAnyOneRed)
                     color = "orange";
-                status.concat("H2S Concentration \n");
+                status += ("H2S Concentration \n");
             }
             if (variables.PPG > 170 || variables.PPG < 60) {
                 color = "red";
                 isAnyOneRed = true;
-                status.concat("Abnormal HeartRate \n");
+                status += ("Abnormal HeartRate \n");
             }
             if (variables.innerTemp >= 42) {
                 if (!isAnyOneRed)
                     color = "orange";
-                status.concat("Inside Temp \n");
+                status += ("Inside Temp \n");
             }
             if (variables.outerTemp >= 70) {
                 if (!isAnyOneRed)
                     color = "orange";
-                status.concat("Outside Temp \n");
+                status += ("Outside Temp \n");
             }
-            if (variables.PPG <= 170 && bvariables.PPG >= 60 && variables.freefall == 0) {
+            if (variables.PPG <= 170 && variables.PPG >= 60 && variables.freefall == 0) {
                 isAnyOneRed = false;
             }
         }
@@ -140,6 +140,7 @@ const setSituation = (situation) => {
     } else if (color == "red") {
         situation.className += ' red-situation';
     }
+    console.log(status);
     let text = document.getElementById("situation-text");
     text.innerText = status;
 };
@@ -154,8 +155,8 @@ const isNormal = () => {
     return false;
 };
 
-let situation = document.getElementById("situation");
-setSituation(situation);
+
+setSituation();
 setBattery(4);
 setBluetooth(0);
 setFreeFall(0);

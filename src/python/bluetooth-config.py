@@ -4,15 +4,13 @@ import sys
 
 
 port = sys.stdin.readline()
-ser = serial.Serial(port, 38400, timeout=1.5)
+port = port[:len(port) - 1]
+
+ser = serial.Serial(port, 38400, timeout=1)
 line = str(ser.readline())
 data = {}
 counter = 0
 while True:
-    porti = sys.stdin.readlines()
-    if porti != port:
-        port = porti
-        ser = serial.Serial(port, 38400, timeout=1.5)
     if (ser.isOpen()):
         x = ser.readline()
         if len(x) != 0:
@@ -41,7 +39,7 @@ while True:
                 elif i.startswith('WA'):
                     data.update({'walking': i[2:]})
                 elif i.startswith('FF'):
-                    data.update({'freefall': i[2:]})
+                    data.update({'freefall': i[2:len(i) - 1]})
             js = json.dumps(data)
             print (js)
             sys.stdout.flush()
