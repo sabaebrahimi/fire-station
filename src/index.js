@@ -41,6 +41,11 @@ app.on('activate', () => {
   }
 });
 
+ipcMain.on('port:add', (e, port) => {
+  mainWindow.webContents.send('port:add', port);
+  setBluetoothWindow.close();
+});
+
 const createBluetoothSetWindow = () => {
   setBluetoothWindow = new BrowserWindow({
     width: 300,

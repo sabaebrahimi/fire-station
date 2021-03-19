@@ -11,8 +11,20 @@ body{
 .normal-situation {
     background-image: linear-gradient(to bottom, transparent, rgba(42, 130, 64, 0.4));
 }
+.orange-situation {
+    background-image: linear-gradient(to bottom, transparent, rgba(255, 126, 82, 0.4));
+}
+.red-situation {
+    background-image: linear-gradient(to bottom, transparent, rgba(255, 0, 0, 0.4));
+}
 .normal-situation .status {
     color: #2A8240;
+}
+.orange-situation .status {
+    color: #FF7E52;
+}
+.red-situation .status {
+    color: red;
 }
 .status {
     height: 80%;
