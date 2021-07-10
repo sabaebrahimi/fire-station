@@ -42,10 +42,37 @@ const variablesToDoc = () => {
     document.getElementById('inner-hum').innerText = variables.innerHum;
     document.getElementById('outer-temp').innerText = variables.outerTemp;
     document.getElementById('outer-hum').innerText = variables.outerHum;
-    document.getElementById('ppg-number').innerText = variables.PPG;
-    document.getElementById('co-number').innerText = variables.CO;
-    document.getElementById('h2s-number').innerText = variables.H2S;
-    document.getElementById('combust-number').innerText = variables.combust;
+
+    if (variables.PPG == -1)
+        document.getElementById('ppg-number').innerText = "N/A";
+    else if (variables.PPG == -3)
+        document.getElementById('ppg-number').innerText = "Measuring...";
+    else if (variables.PPG == -4)
+        document.getElementById('ppg-number').innerText = "No Skin Detected";
+    else
+        document.getElementById('ppg-number').innerText = variables.PPG;
+
+    if (variables.CO == -1)
+        document.getElementById('co-number').innerText = "N/A";
+    else if (variables.CO == -2)
+        document.getElementById('co-number').innerText = "Warm Up";
+    else
+        document.getElementById('co-number').innerText = variables.CO;
+
+    if (variables.H2S == -1)
+        document.getElementById('h2s-number').innerText = "N/A";
+    else if (variables.H2S == -2)
+        document.getElementById('h2s-number').innerText = "Warm Up";
+    else
+        document.getElementById('h2s-number').innerText = variables.H2S;
+
+    if (variables.combust == -1)
+        document.getElementById('combust-number').innerText = "N/A";
+    else if (variables.combust == -2)
+        document.getElementById('combust-number').innerText = "Warm Up";
+    else
+        document.getElementById('combust-number').innerText = variables.combust;
+
     updateDataChart(chart1, variables.PPG);
     updateDataChart(chart2, variables.CO);
     updateDataChart(chart3, variables.H2S);
@@ -56,7 +83,11 @@ const variablesToDoc = () => {
     setBluetooth(1);
 }
 
-const updateDataChart = (chart, data) => {
+const updateDataChart = (chart, data, type) => {
+    if (data <= -1 && data >= -4) {
+        data = 0;
+    }
+
     if (chart.data.datasets[0].data.length == 10) {
         chart.data.datasets.forEach((dataset) => {
             dataset.data.shift();
