@@ -29,18 +29,26 @@ while True:
                         data.update({'outerHum': i[2:]})
                     elif i.startswith('PG'):
                         data.update({'PPG': i[2:]})
-                    elif i.startswith('HS'):
-                        data.update({'H2S': i[2:]})
+                    elif i.startswith('HH'):
+                        data.update({'H2': i[2:]})
                     elif i.startswith('CO'):
-                        data.update({'CO': i[2:]})
-                    elif i.startswith('CG'):
-                        data.update({'combust': i[2:]})
+                        data.update({'CO2': i[2:]})
+                    elif i.startswith('ET'):
+                        data.update({'ethanol': i[2:]})
                     elif i.startswith('BA'):
                         data.update({'battery': i[2:]})
                     elif i.startswith('WA'):
                         data.update({'walking': i[2:]})
-                    elif i.startswith('FF'):
-                        data.update({'freefall': i[2:len(i) - 2]})
+                    elif i.startswith('AL'):
+                        data.update({'altitude': i[2:]})
+                    elif i.startswith('LG'):
+                        data.update({'gps_long': i[2:]})
+                    elif i.startswith('LT'):
+                        data.update({'gps_lat': i[2:]})
+                    elif i.startswith('GT'):
+                        data.update({'gps_time': i[2:]})
+                    elif i.startswith('GD'):
+                        data.update({'gps_date': i[2:]})
                 js = json.dumps(data)
                 print (js)
                 sys.stdout.flush()

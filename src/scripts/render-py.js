@@ -2,27 +2,28 @@ import { chart1 } from './chart1.js';
 import { chart2 } from './chart2.js';
 import { chart3 } from './chart3.js';
 import { chart4 } from './chart4.js';
-import { setBattery, setBluetooth, setFreeFall, setWalking } from './svgLoader.js';
+import { setBattery, setBluetooth, setWalking } from './svgLoader.js';
 var variables = {
     bluetooth: 0
 };
 
 let { PythonShell } = require('python-shell');
-let options = {
+const options = {
     mode: 'text',
     pythonPath: 'python'
 }
-let pyshell = new PythonShell('./resources/app/src/python/bluetooth-config.py', options);
+let bluetoothShell = new PythonShell('./resources/app/src/python/bluetooth-config.py', options);
+
 
 const electron = require('electron');
 const { ipcRenderer } = electron;
 let port;
 ipcRenderer.on("port:add", (e, porti) => {
     port = porti;
-    pyshell.send(port);
+    bluetoothShell.send(port);
 });
 
-pyshell.on('message', (message) => {
+bluetoothShell.on('message', (message) => {
     if (message == 'disconnected') {
         setBluetooth(0);
         variables.bluetooth = 0;
@@ -39,7 +40,7 @@ pyshell.on('message', (message) => {
 
 const variablesToDoc = () => {
     document.getElementById('inner-temp').innerText = variables.innerTemp;
-    document.getElementById('inner-hum').innerText = variables.innerHum;
+   // document.getElementById('inner-hum').innerText = variables.innerHum;
     document.getElementById('outer-temp').innerText = variables.outerTemp;
     document.getElementById('outer-hum').innerText = variables.outerHum;
 
@@ -52,34 +53,33 @@ const variablesToDoc = () => {
     else
         document.getElementById('ppg-number').innerText = variables.PPG;
 
-    if (variables.CO == -1)
+    if (variables.CO2 == -1)
         document.getElementById('co-number').innerText = "N/A";
-    else if (variables.CO == -2)
+    else if (variables.CO2 == -2)
         document.getElementById('co-number').innerText = "Warm Up";
     else
         document.getElementById('co-number').innerText = variables.CO;
 
-    if (variables.H2S == -1)
+    if (variables.H2 == -1)
         document.getElementById('h2s-number').innerText = "N/A";
-    else if (variables.H2S == -2)
+    else if (variables.H2 == -2)
         document.getElementById('h2s-number').innerText = "Warm Up";
     else
-        document.getElementById('h2s-number').innerText = variables.H2S;
+        document.getElementById('h2s-number').innerText = variables.H2;
 
-    if (variables.combust == -1)
+    if (variables.ethanol == -1)
         document.getElementById('combust-number').innerText = "N/A";
-    else if (variables.combust == -2)
+    else if (variables.ethanol == -2)
         document.getElementById('combust-number').innerText = "Warm Up";
     else
         document.getElementById('combust-number').innerText = variables.combust;
 
     updateDataChart(chart1, variables.PPG);
-    updateDataChart(chart2, variables.CO);
-    updateDataChart(chart3, variables.H2S);
-    updateDataChart(chart4, variables.combust);
+    updateDataChart(chart2, variables.CO2);
+    updateDataChart(chart3, variables.H2);
+    updateDataChart(chart4, variables.ethanol);
     setBattery(variables.battery);
     setWalking(variables.walking);
-    setFreeFall(variables.freefall);
     setBluetooth(1);
 }
 
@@ -116,7 +116,7 @@ const setSituation = () => {
         }
         else {
             let p = parseInt(variables.PPG);
-            if (p <= 170 && p >= 60 && variables.freefall == 0) {
+            if (((p <= 170 && p >= 60) || (p >= -4 && p <= -1)) && variables.freefall == 0) {
                 isAnyOneRed = false;
             }
             if (variables.battery == 2 || variables.battery == 1) {
@@ -129,27 +129,22 @@ const setSituation = () => {
                     color = "orange";
                 status += ("Motionless \n");
             }
-            if (variables.freefall == 1) {
-                color = "red";
-                isAnyOneRed = true;
-                status += ("Free Fall \n");
-            }
-            if (variables.combust >= 10) {
+            if (variables.ethanol >= 10) {
                 if (isAnyOneRed === false)
                     color = "orange";
-                status += ("Combust Concentration \n");
+                status += ("Ethanol Concentration \n");
             }
-            if (variables.CO >= 70) {
+            if (variables.CO2 >= 70) {
                 if (isAnyOneRed === false)
                     color = "orange";
-                status += ("CO Concentration \n");
+                status += ("CO2 Concentration \n");
             }
-            if (variables.H2S >= 10) {
+            if (variables.H2 >= 10) {
                 if (isAnyOneRed === false)
                     color = "orange";
-                status += ("H2S Concentration \n");
+                status += ("H2 Concentration \n");
             }
-            if (p > 170 || p < 60) {
+            if (p > 170 || (p < 60 && p >= 0)) {
                 color = "red";
                 isAnyOneRed = true;
                 status += ("Abnormal HeartRate \n");
@@ -166,7 +161,6 @@ const setSituation = () => {
             }
         }
     }
-    console.log(color);
     if (color == "green") {
         situation.className = ' normal-situation';
     } else if (color == "orange") {
@@ -185,9 +179,10 @@ const setSituation = () => {
 };
 
 const isNormal = () => {
-    if ((variables.battery == 3 || variables.battery == 4) && variables.freefall == 0 &&
-        variables.walking == 1 && variables.bluetooth == 1 && variables.CO < 70 && variables.H2S < 10 &&
-        variables.combust < 10 && variables.PPG >= 60 && variables.PPG <= 170 &&
+    if ((variables.battery == 3 || variables.battery == 4) && 
+        variables.walking == 1 && variables.bluetooth == 1 && variables.CO2 < 70 && variables.H2 < 10 &&
+        variables.ethanol < 10 && ((variables.PPG >= 60 && variables.PPG <= 170) ||
+            (variables.PPG >= -4 && variables.PPG <= -1)) &&
         outerTemp < 70 && innerHum < 42) {
         return true;
     }
@@ -198,5 +193,4 @@ const isNormal = () => {
 setSituation();
 setBattery(4);
 setBluetooth(0);
-setFreeFall(0);
 setWalking(0);

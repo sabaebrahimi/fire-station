@@ -47,7 +47,8 @@
   "dependencies": {
     "chart.js": "^2.9.4",
     "electron-squirrel-startup": "^1.0.0",
-    "python-shell": "^2.0.3"
+    "python-shell": "^2.0.3",
+    "serialport": "^10.3.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
