@@ -3,24 +3,26 @@ const {ipcRenderer} = electron;
 const {SerialPort} = require('serialport');
 
 async function listSerialPorts() {
-    console.log("hereee");
     await SerialPort.list().then((ports, err) => {
         if (err) {
             document.getElementById('available-ports').textContent = 'Error in getting ports list';
+            document.getElementById('port-selection').innerHTML = '';
             return;
         } 
         console.log('ports', ports);
 
         if (ports.length === 0) {
-            document.getElementById('available-ports').textContent = 'No ports discovered'
+            document.getElementById('available-ports').textContent = 'No ports discovered';
+            document.getElementById('port-selection').innerHTML = '';
         } else {
+            document.getElementById('available-ports').textContent = '';
             const portsList = ports.map(port => {
-                return `<p>${port.path}</p>`
+                return `<option value="${port.path}">${port.path}</option>`
             });
 
             const portsStr = portsList.join('\n');
 
-            document.getElementById('available-ports').innerHTML = portsStr;
+            document.getElementById('port-selection').innerHTML = portsStr;
         }
     });
 }
@@ -30,8 +32,6 @@ function listPorts() {
   setTimeout(listPorts, 2000);
 }
 
-// Set a timeout that will che  ck for new serialPorts every 2 seconds.
-// This timeout reschedules itself.
 setTimeout(listPorts, 2000);
 
 listSerialPorts();

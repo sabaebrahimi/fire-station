@@ -1,7 +1,7 @@
 let containerBattery = document.getElementById('icon1-container');
 export const setBattery = (batteryEnergy) => {
-  if (batteryEnergy == 1) {
-    containerBattery.innerHTML = `<svg
+    if (batteryEnergy == 1) {
+        containerBattery.innerHTML = `<svg
       class="public-style"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -91,10 +91,9 @@ export const setBattery = (batteryEnergy) => {
         </g>
       </g>
     </svg>
-    <div>Battery</div>`
-  }
-  else if (batteryEnergy == 2) {
-    containerBattery.innerHTML = `<svg
+    <div>Battery</div>`;
+    } else if (batteryEnergy == 2) {
+        containerBattery.innerHTML = `<svg
       class="public-style"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -189,9 +188,8 @@ export const setBattery = (batteryEnergy) => {
       </g>
       </svg>
       <div>Battery</div>`;
-  }
-  else if (batteryEnergy == 3) {
-    containerBattery.innerHTML = `<svg
+    } else if (batteryEnergy == 3) {
+        containerBattery.innerHTML = `<svg
       class="public-style"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -279,10 +277,9 @@ export const setBattery = (batteryEnergy) => {
         </g>
       </g>
     </svg>
-    <div>Battery</div>`
-  }
-  else if (batteryEnergy == 4) {
-    containerBattery.innerHTML = `<svg
+    <div>Battery</div>`;
+    } else if (batteryEnergy == 4) {
+        containerBattery.innerHTML = `<svg
       class="public-style"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -373,139 +370,130 @@ export const setBattery = (batteryEnergy) => {
         </g>
       </g>
     </svg>
-    <div>Battery</div>`
-  }
-}
+    <div>Battery</div>`;
+    }
+};
 
 let containerBluetooth = document.getElementById('icon2-container');
 export const setBluetooth = (bluetoothisConnected) => {
-  if (bluetoothisConnected == 1) {
-    containerBluetooth.innerHTML = `<svg
-      class="public-style"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      viewBox="0 0 113.04 113.45"
+    if (bluetoothisConnected == 1) {
+        containerBluetooth.innerHTML = `<svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        x="0px"
+        y="0px"
+        viewBox="0 0 800 800"
+        class="public-style"
+        style="enable-background: new 0 0 800 800"
+        xml:space="preserve"
       >
-      <defs>
-        <style>
-          .blue-connected-1 {
-            fill: url(#blue-connected-gradient);
-          }
-          .blue-connected-2 {
-            fill: url(#blue-connected-gradient-2);
-          }
-          .blue-connected-3 {
+        <style type="text/css">
+          .st0 {
             fill: none;
-            stroke: #fff;
+            stroke: url(#connected-gradient1);
+            stroke-width: 40;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 133.3333;
+          }
+          .st1 {
+            fill: url(#connected-gradient2);
+          }
+          .st2 {
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 0.63;
             stroke-miterlimit: 10;
-            stroke-width: 0.63px;
-          }
-          .blue-connected-4 {
-            font-size: 14.41px;
-            fill: #fff;
-            font-family: IRANSans;
-          }
-          .blue-connected-5 {
-            font-size: 13px;
           }
         </style>
         <linearGradient
-          id="blue-connected-gradient"
-          x1="36.52"
-          y1="58.32"
-          x2="76.52"
-          y2="58.32"
+          id="connected-gradient1"
           gradientUnits="userSpaceOnUse"
+          x1="192.7071"
+          y1="379.5743"
+          x2="608.2928"
+          y2="379.5743"
         >
-          <stop offset="0" stop-color="#0054ff" />
-          <stop offset="0.23" stop-color="#08f" />
-          <stop offset="0.48" stop-color="#0bf" />
-          <stop offset="0.71" stop-color="#00e0ff" />
-          <stop offset="0.89" stop-color="#00f7ff" />
-          <stop offset="1" stop-color="aqua" />
+          <stop offset="0" style="stop-color: #0037d3" />
+          <stop offset="1" style="stop-color: #71d4ff" />
         </linearGradient>
-        <linearGradient
-          id="blue-connected-gradient-2"
-          x1="27.44"
-          y1="39.2"
-          x2="124.54"
-          y2="97.03"
-          xlink:href="#blue-connected-gradient"
+        <path
+          class="st0"
+          d="M474.3,481.6c40.7-41.1,40.7-107.6,0-148.7c-40.7-41.1-106.8-41.1-147.5,0s-40.7,107.6,0,148.7 M533.3,541.1  c73.3-73.9,73.3-193.7,0-267.7c-73.3-73.9-192.2-73.9-265.6,0s-73.3,193.7,0,267.7 M421.4,407.3c0,11.6-9.3,21-20.9,21  c-11.5,0-20.9-9.4-20.9-21c0-11.6,9.3-21,20.9-21C412,386.3,421.4,395.7,421.4,407.3z"
         />
-      </defs>
-      <g id="Layer_2" data-name="Layer 2">
-        <g id="app">
-          <g id="Bluetooth_connected" data-name="Bluetooth connected">
-            <path
-              class="blue-connected-1"
-              d="M45.41,58.32,41,53.88l-4.44,4.44L41,62.77Zm23.8-9.53L56.52,36.1H54.3V53L44.1,42.76,41,45.9,53.38,58.32,41,70.74l3.14,3.14,10.2-10.2V80.54h2.22L69.21,67.85l-9.56-9.53ZM58.74,44.61l4.18,4.18L58.74,53Zm4.18,23.24L58.74,72V63.68Zm9.16-14-4.45,4.44,4.45,4.45,4.44-4.45Z"
-            />
-            <path
-              class="blue-connected-2"
-              d="M56.52,113A56.52,56.52,0,1,1,113,56.52,56.58,56.58,0,0,1,56.52,113Zm0-109.67a53.15,53.15,0,1,0,53.15,53.15A53.21,53.21,0,0,0,56.52,3.37Z"
-            />
-            <circle
-              class="blue-connected-3"
-              cx="56.52"
-              cy="56.52"
-              r="47.87"
-            />
-          </g>
-        </g>
-      </g>
+        <linearGradient
+          id="connected-gradient2"
+          gradientUnits="userSpaceOnUse"
+          x1="203.5034"
+          y1="517.9829"
+          x2="862.4562"
+          y2="125.5293"
+          gradientTransform="matrix(1 0 0 -1 0 800)"
+        >
+          <stop offset="0" style="stop-color: #0054ff" />
+          <stop offset="0.23" style="stop-color: #0088ff" />
+          <stop offset="0.48" style="stop-color: #00bbff" />
+          <stop offset="0.71" style="stop-color: #00e0ff" />
+          <stop offset="0.89" style="stop-color: #00f7ff" />
+          <stop offset="1" style="stop-color: #00ffff" />
+        </linearGradient>
+        <path
+          class="st1"
+          d="M400.8,782.8C189,783,17.1,611.4,17,399.6C16.9,187.8,188.4,16,400.2,15.8S783.9,187.3,784,399.1  c0,0.2,0,0.4,0,0.5C783.6,611.1,612.3,782.5,400.8,782.8z M400.8,38.7c-199.2,0-360.6,161.5-360.6,360.6S201.6,760,400.8,760  s360.6-161.5,360.6-360.6l0,0C761,200.4,599.7,39.2,400.8,39V38.7z"
+        />
+        <circle class="st2" cx="400.8" cy="399.6" r="324.8" />
       </svg>
       <div>Connected</div>`;
-  }
-  else {
-    containerBluetooth.innerHTML = `<svg 
+    } else {
+        containerBluetooth.innerHTML = `<svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
         class="public-style"
-        xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 113.04 113.56">
-        <defs>
-          <style>
-            .bluetooth-dis-1,
-            .bluetooth-dis-3 {
-              fill: #fff;
-            }
-            .bluetooth-dis-2 {
-              fill: none;
-              stroke: #fff;
-              stroke-miterlimit: 10;
-              stroke-width: 0.63px;
-            }
-            .bluetooth-dis-3 {
-              font-size: 14.41px;
-              font-family: IRANSans;
-            }
-            .bluetooth-dis-4 {
-              font-size: 13px;
-            }
-          </style>
-        </defs>
-        <g id="Layer_2" data-name="Layer 2">
-          <g id="app">
-            <g id="Bluetooth_disconnect" data-name="Bluetooth disconnect">
-              <path
-                class="bluetooth-dis-1"
-                d="M69.21,48.79,56.52,36.1H54.3V53L44.1,42.76,41,45.9,53.38,58.32,41,70.74l3.14,3.14,10.2-10.2V80.54h2.22L69.21,67.85l-9.56-9.53ZM58.74,44.61l4.18,4.18L58.74,53Zm4.18,23.24L58.74,72V63.68Z"
-              />
-              <path
-                class="bluetooth-dis-1"
-                d="M56.52,113A56.52,56.52,0,1,1,113,56.52,56.58,56.58,0,0,1,56.52,113Zm0-109.67a53.15,53.15,0,1,0,53.15,53.15A53.21,53.21,0,0,0,56.52,3.37Z"
-              />
-              <circle class="bluetooth-dis-2" cx="56.52" cy="56.52" r="47.87" />
-            </g>
-          </g>
-        </g>
-      </svg>
-      <div>Disconnected</div>`
-  }
-}
+        x="0px"
+        y="0px"
+        viewBox="0 0 800 800"
+        style="enable-background: new 0 0 800 800"
+        xml:space="preserve"
+      >
+        <style type="text/css">
+          .disconnect0 {
+            fill: #ffffff;
+          }
+          .disconnect1 {
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 0.63;
+            stroke-miterlimit: 10;
+          }
+          .disconnect2 {
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 40;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 133.3333;
+          }
+        </style>
+        <path
+          class="disconnect0"
+          d="M400.8,782.8C189,783,17.1,611.4,17,399.6C16.9,187.8,188.4,16,400.2,15.8S783.9,187.3,784,399.1  c0,0.2,0,0.4,0,0.5C783.6,611.1,612.3,782.5,400.8,782.8z M400.8,38.7c-199.2,0-360.6,161.5-360.6,360.6S201.6,760,400.8,760  s360.6-161.5,360.6-360.6l0,0C761,200.4,599.7,39.2,400.8,39V38.7z"
+        />
+        <circle class="disconnect1" cx="400.8" cy="399.6" r="324.8" />
+        <path
+          class="disconnect2"
+          d="M326.7,480.9c-40.7-40.7-40.7-106.8,0-147.5 M400.5,302.8c26.7,0,53.4,10.2,73.8,30.6  c20.4,20.4,30.6,47.1,30.6,73.8 M267.7,539.9c-73.3-73.3-73.3-192.2,0-265.6 M330.5,232.8c67.7-27.1,148-13.3,202.8,41.5  c54.8,54.8,68.7,135.1,41.5,202.8 M233.6,240.2l152.2,152.2 M567.4,574L415.3,421.9 M385.7,392.3c-3.8,3.8-6.1,9-6.1,14.8  c0,11.5,9.3,20.9,20.9,20.9c5.8,0,11-2.3,14.8-6.1 M385.7,392.3l29.5,29.5"
+        />
+      </svg>      
+      <div>Disconnected</div>`;
+    }
+};
 
 let containerWalking = document.getElementById('icon4-container');
 export const setWalking = (isWalking) => {
-  if (isWalking == 1) {
-    containerWalking.innerHTML = `<svg
+    if (isWalking == 1) {
+        containerWalking.innerHTML = `<svg
       class="public-style"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -573,8 +561,8 @@ export const setWalking = (isWalking) => {
       </g>
       </svg>
       <div>Walking</div>`;
-  } else {
-    containerWalking.innerHTML = `<svg
+    } else {
+        containerWalking.innerHTML = `<svg
       class="public-style"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -653,9 +641,9 @@ export const setWalking = (isWalking) => {
         </g>
       </g>
     </svg>
-    <div>Motion Less</div>`
-  }
-}
+    <div>Motion Less</div>`;
+    }
+};
 
 let userSituationSvg = document.getElementById('user-situation-svg');
 userSituationSvg.innerHTML = `<defs>
@@ -687,7 +675,7 @@ userSituationSvg.innerHTML = `<defs>
 </g>`;
 let tempraturesSvg = document.getElementsByClassName('temprature-style');
 for (let i = 0; i < tempraturesSvg.length; i++) {
-  tempraturesSvg[i].innerHTML = `<defs>
+    tempraturesSvg[i].innerHTML = `<defs>
   <style>
     .temprature-1 {
       fill: #a00;
@@ -832,7 +820,7 @@ heartContainer.innerHTML = `<defs>
 </g>`;
 let gasContainers = document.getElementsByClassName('gas-style');
 for (let i = 0; i < gasContainers.length; i++) {
-  gasContainers[i].innerHTML = `<defs>
+    gasContainers[i].innerHTML = `<defs>
   <style>
     .gas-1 {
       fill: none;

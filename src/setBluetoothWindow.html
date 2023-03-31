@@ -8,17 +8,18 @@
 </head>
 <body>
     <div>
-        <h5>available Ports: </h5>
         <span id="available-ports"></span>
     </div>
     <form>
         <div>
-            <label>Enter your bluetooth port</label>
-            <input type="text" id="port" autofocus/>
+            <label>Select bluetooth ports</label>
+            <select id="port-selection" name="ports">
+                
+            </select>
         </div>
         <button type="submit">Set Port</button>
     </form>
-    <script src="./scripts/get-port-list.js"></script>
-    <script src="./scripts/addPort.js"></script>
+    <script src="./scripts/get-port-list.js" type="module"></script>
+    <script src="./scripts/addPort.js" type="module"></script>
 </body>
 </html>
